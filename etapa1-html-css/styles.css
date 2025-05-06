@@ -1,1 +1,186 @@
-ECHO est� ativado.
+/*Geral*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+.container {
+    margin: 0;
+}
+
+/* seção resultado*/
+
+.resultado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resultado h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.resultado p {
+    font-size: 1rem;
+    color: #666666b9;
+}
+
+.conteudo {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2%;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%; 
+    justify-content: center;
+    margin-bottom: 2%;
+}
+  
+.card {
+    background-color: white;
+    border-radius: 1%;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 48%;
+    font-size: 1rem;
+}
+
+  
+.card img {
+    width: 100%;
+}
+
+  
+.texto {
+    padding: 15px;
+}
+  
+.texto h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+  
+.texto p {
+    font-size: 14px;
+    color: #44444494;
+    margin-bottom: 10px;
+}
+  
+.texto a {
+    color: #0090f7;
+    text-decoration: none;
+    font-size: small;
+}
+
+/* Categorias e barra de pesquisa*/
+/* Categoria*/
+.sidebar {
+    flex-shrink: 0;
+    gap: 10%;
+    width: 20%;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 20%;
+}
+  
+.sidebar h5 {
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 0;
+    font-size: small;
+}
+  
+.sidebar ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+  
+.sidebar li {
+    width: 100%;
+    padding: 5px 0;
+    color: #3333337e;
+    border-bottom: 1px solid #3333337e; 
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+    font-size:smaller;
+    justify-content: center;
+}
+
+/* Barra de pesquisa*/
+.busca {
+    justify-content: center;
+}
+
+.busca h5 {
+    padding-top: 10%;
+}
+
+.caixaTexto {
+    position:relative;
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1.5px solid #ccc;
+    border-radius: 6%;
+    align-items: center;
+}
+
+.caixaTexto input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: small;
+    border: none;
+    outline: none;
+}
+
+/* formatação para telas pequenas*/
+@media (max-width: 900px) {
+    body {
+        margin: 5%;
+    }
+
+    html {
+        font-size: 80%;
+    }
+    
+    .conteudo {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .cards {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+  
+    .sidebar {
+        width: 90%;
+        max-width: 600px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+  
+    .sidebar h5 {
+        font-size: 16px;
+    }
+  
+    .caixaTexto {
+        width: 100%;
+    }
+
+  }
+  
