@@ -79,6 +79,7 @@ body {
     color: #0090f7;
     text-decoration: none;
     font-size: small;
+    font-weight: 600;
 }
 
 /* Categorias e barra de pesquisa*/
@@ -143,6 +144,14 @@ body {
     font-size: small;
     border: none;
     outline: none;
+}
+
+.imgIcon {
+    align-items: center;
+}
+
+.icon {
+    height: fit-content;
 }
 
 /* formatação para telas pequenas*/
