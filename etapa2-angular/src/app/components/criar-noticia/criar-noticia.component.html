@@ -1,1 +1,10 @@
-<p>criar-noticia works!</p>
+<div class="formulario">
+    <h2>Criar Nova Notícia</h2>
+  
+    <input [(ngModel)]="novaNoticia.title" placeholder="Título" />
+    <textarea [(ngModel)]="novaNoticia.body" placeholder="Conteúdo da notícia"></textarea>
+    <input [(ngModel)]="novaNoticia.image" placeholder="URL da imagem" />
+  
+    <button (click)="criarNoticia()">Publicar Notícia</button>
+  </div>
+  
