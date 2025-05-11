@@ -1,5 +1,6 @@
 .container {
     margin: 5%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navegar a, span{
@@ -12,6 +13,7 @@
 .navegar a:hover{
     color: #02548e;
     font-weight: 500;
+    text-decoration: underline;
 }
 
 .atual {
@@ -23,6 +25,10 @@
     box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
     margin: 5%;
     line-height: 2;
+}
+
+.conteudo h1{
+    line-height: 1.1;
 }
 
 .titulo {
@@ -72,6 +78,7 @@
     display: flex;
     justify-content: center;
     margin: 4%;
+    margin-bottom: 0;
 }
 
 .texto p{
@@ -80,20 +87,171 @@
 
 .compartilhar {
     display: flex;
-    width: auto;
-    margin: 2%;
+    justify-content: left;
+    margin-bottom: 2%;
 }
-
-.compartilhar a{
+  
+.botoes {
     display: flex;
-
+    gap: 0;
+    margin: 0;
 }
 
-.compartilhar img{
-    max-width: 5%;
+.botoes span {
+    margin-top: 3%;
+    margin-left: 10%;
+    color: #4e4949;
 }
 
+hr{
+    margin: 0;
+}
+  
+.compartilhar a {
+    margin: 4% 0;
+    display: flex;
+    width: 3rem;
+    height: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
 
+.compartilhar a:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
 
+.compartilhar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.relacionadas {
+    margin: 5%;
+  }
+  
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+    border-radius: 1%;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+  
+.imagemRel {
+    flex: 1;
+    height: auto;
+    max-width: 100%; /* Altere o max-width para 100% */
+    min-width: 0;
+    min-height: 15rem;
+    max-height: 15rem;
+}
+  
+.imagemRel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+  
+.textocard {
+    flex: 2;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.textocard h2{
+    line-height: 1;
+}
 
   
+.textocard p {
+    margin: 0.5rem 0;
+}
+  
+.textocard a {
+    align-self: flex-start;
+    color: #0077cc;
+    text-decoration: none;
+}
+  
+.textocard a:hover {
+    color: #02548e;
+    text-decoration: underline;
+}
+  
+.card hr {
+    display: none;
+}
+
+.barraNav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #333; 
+    padding: 1rem 2rem; 
+    color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+  
+
+.barraNav h1 {
+    margin: 0; 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+}
+
+.footer {
+    background-color: #333; 
+    color: white;
+    padding: 2rem 0; 
+}
+
+@media (max-width: 900px) {
+    .barraNav {
+        padding: 1rem;
+    }
+
+    .barraNav h1 {
+        font-size: 1.5rem; 
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .imagemReal {
+        width: 100%;       
+        overflow: hidden;
+    }
+
+    .imagemRel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+
+    .footer {
+        max-width: 100%;
+    } 
+}
+

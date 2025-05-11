@@ -1,6 +1,13 @@
+<header>
+  <nav class="barraNav">
+    <div>
+      <h1>Notícias</h1>
+    </div>
+  </nav>
+</header>
+
 <main class="container">
 
-  
   <ng-container *ngIf="post; else erro">
     <section>
       <div class="navegar">
@@ -29,18 +36,49 @@
           <p>{{ post.body }}</p>
         </div>  
       </section>
-      
+
       <hr>
 
       <section class="compartilhar">
-        <a href="#" class="icon">
-          <img src="assets/instagram.png" alt="Compartilhar">
-        </a>
-        <a href="#" class="icon">
-          <img src="assets/facebook.png" alt="Compartilhar">
-        </a>
+        <div class="botoes">
+          <span>Compartilhar: </span>
+          <a href="#" class="icon">
+            <img src="assets/instagram.png" alt="Compartilhar">
+          </a>
+          <a href="#" class="icon">
+            <img src="assets/facebook.png" alt="Compartilhar">
+          </a>
+          <a href="#" class="icon">
+            <img src="assets/twitter.png" alt="Compartilhar">
+          </a>
+          <a href="#" class="icon">
+            <img src="assets/whatsapp.png" alt="Compartilhar">
+          </a>
+        </div>
       </section>
+
     </article>
+
+    <section class="relacionadas">
+      <h2>Notícias relacionadas</h2>
+
+      <div class="cards">
+        <article class="card" *ngFor="let post of posts">
+          <div class="imagemRel">
+              <img [src]="post.image" alt="Imagem da notícia">
+          </div>
+          <div class="textocard">
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.body | slice:0:150 }}...</p>
+              <a [routerLink]="['/detalhes', post.id]">Ler mais</a>
+          </div>
+
+          <hr>
+          
+        </article>
+        
+      </div>
+    </section>
 
   </ng-container>
 
@@ -49,3 +87,11 @@
   </ng-template>
 
 </main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <nav class="footer-nav">
+    </nav>
+  </div>
+</footer>
+
