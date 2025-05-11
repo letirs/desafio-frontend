@@ -1,10 +1,51 @@
-<div *ngIf="post">
-    <h2>{{ post.title }}</h2>
-    <img [src]="post.image" alt="Imagem">
-    <p>{{ post.body }}</p>
-  </div>
+<main class="container">
+
   
-  <div *ngIf="!post">
-    <p>Carregando ou post não encontrado.</p>
-  </div>
+  <ng-container *ngIf="post; else erro">
+    <section>
+      <div class="navegar">
+        <a [routerLink]="['']">Resultados da Busca </a>
+        <span> / </span>
+        <span class="atual"> Detalhes da Notícia</span>
+      </div>
+    </section>
+    
+    <article class="conteudo"> 
+      <section class="titulo">
+          <div class="info">
+            <h1>{{ post.title }}</h1>
+            <p class="info">{{post.createdAt | date:'medium'}}</p>
+          </div>
+      </section>
   
+      <section class="template">
+        <div class="imagem">
+          <img [src]="post.image" [alt]="'Imagem da notícia ' + post.title">
+        </div>
+      </section>
+  
+      <section class="texto">
+        <div>
+          <p>{{ post.body }}</p>
+        </div>  
+      </section>
+      
+      <hr>
+
+      <section class="compartilhar">
+        <a href="#" class="icon">
+          <img src="assets/instagram.png" alt="Compartilhar">
+        </a>
+        <a href="#" class="icon">
+          <img src="assets/facebook.png" alt="Compartilhar">
+        </a>
+      </section>
+    </article>
+
+  </ng-container>
+
+  <ng-template #erro>
+    <p>Post não encontrado.</p>
+  </ng-template>
+
+</main>

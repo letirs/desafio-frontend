@@ -1,0 +1,99 @@
+.container {
+    margin: 5%;
+}
+
+.navegar a, span{
+    text-decoration: none;
+    color: #646565;
+    font-size: small;
+    font-weight: 500;
+}
+
+.navegar a:hover{
+    color: #02548e;
+    font-weight: 500;
+}
+
+.atual {
+    color: #524e4e;
+}
+
+.conteudo {
+    border-radius: 2%;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 5%;
+    line-height: 2;
+}
+
+.titulo {
+    overflow: hidden;
+    text-align: left;
+    margin: 2%;
+}
+
+.info {
+    margin: 2%;
+}
+
+.titulo h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.titulo p {
+    font-size: 0.8rem;
+    color: #666666b9;
+    margin: 0;
+}
+
+.template {
+    display: flex;
+    justify-content: center; 
+}
+  
+.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; 
+}
+  
+.imagem img {
+    width: 100%;
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 2%; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  }
+
+.texto {
+    display: flex;
+    justify-content: center;
+    margin: 4%;
+}
+
+.texto p{
+    text-align: justify;
+}
+
+.compartilhar {
+    display: flex;
+    width: auto;
+    margin: 2%;
+}
+
+.compartilhar a{
+    display: flex;
+
+}
+
+.compartilhar img{
+    max-width: 5%;
+}
+
+
+
+
+  

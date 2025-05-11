@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-detalhes',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './detalhes.component.html'
+  imports: [CommonModule, RouterModule],
+  templateUrl: './detalhes.component.html',
+  styleUrls: ['./detalhes.component.scss']
 })
 export class DetalhesComponent implements OnInit {
   id!: number;

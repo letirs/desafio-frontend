@@ -6,7 +6,7 @@ import { CriarNoticiaComponent } from './components/criar-noticia/criar-noticia.
 
 export const routes: Routes = [
       // rota inicial
-  { path: '', component: HomeComponent },
+  { path:'', component: HomeComponent },
 
   // rota de detalhes com parâmetro de ID
   { path: 'detalhes/:id', component: DetalhesComponent },

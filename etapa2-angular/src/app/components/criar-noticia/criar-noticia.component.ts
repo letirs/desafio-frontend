@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router'; 
 import { RouterModule } from '@angular/router';
 import { PostService } from '../../services/post.service';
-import { Post } from '../../models/post';
+import { PostCriacao } from '../../models/post';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,8 +15,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CriarNoticiaComponent implements OnInit {
 
-  novaNoticia: Post = {
-    id: 0,
+  novaNoticia: PostCriacao = {
     title: '',
     body: '',
     image: ''
