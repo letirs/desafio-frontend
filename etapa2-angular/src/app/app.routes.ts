@@ -5,12 +5,21 @@ import { HomeComponent } from './components/home/home.component';
 import { CriarNoticiaComponent } from './components/criar-noticia/criar-noticia.component';
 
 export const routes: Routes = [
-      // rota inicial
-  { path:'', component: HomeComponent },
-
-  // rota de detalhes com parâmetro de ID
-  { path: 'detalhes/:id', component: DetalhesComponent },
-
-  { path: 'criar-noticia', component: CriarNoticiaComponent}
+  {
+    path: '',
+    loadComponent: () =>
+      import('./components/home/home.component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'detalhes/:id',
+    loadComponent: () =>
+      import('./components/detalhes/detalhes.component').then((m) => m.DetalhesComponent),
+  },
+  {
+    path: 'criar-noticia',
+    loadComponent: () =>
+      import('./components/criar-noticia/criar-noticia.component').then((m) => m.CriarNoticiaComponent),
+  }
 ];
+
 

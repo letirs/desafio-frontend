@@ -1,10 +1,68 @@
-<div class="formulario">
-    <h2>Criar Nova Notícia</h2>
-  
-    <input [(ngModel)]="novaNoticia.title" placeholder="Título" />
-    <textarea [(ngModel)]="novaNoticia.body" placeholder="Conteúdo da notícia"></textarea>
-    <input [(ngModel)]="novaNoticia.image" placeholder="URL da imagem" />
-  
-    <button (click)="criarNoticia()">Publicar Notícia</button>
+<header>
+  <nav class="barraNav">
+    <div>
+      <h1>Notícias</h1>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section>
+    <div class="navegar">
+      <a [routerLink]="['']">Resultados da Busca </a>
+      <span> / </span>
+      <span class="atual">Criar notícia</span>
+    </div>
+  </section>
+
+  <div class="formulario">
+      <div class="barra">
+        <h2>Criar Notícia</h2>
+      </div>
+
+      <div class="campos">
+        <form #form="ngForm" (ngSubmit)="criarNoticia()" novalidate>
+
+                  <!-- TÍTULO -->
+          <label for="titulo">Título</label>
+          <input id="titulo" [(ngModel)]="novaNoticia.title" name="title" #title="ngModel" required placeholder="Título da notícia" />
+          <div class="erro" *ngIf="formFoiSubmetido && title.invalid">
+            Campo obrigatório.
+          </div>
+
+          <!-- CONTEÚDO -->
+          <label for="conteudo">Conteúdo</label>
+          <textarea id="conteudo" [(ngModel)]="novaNoticia.body" name="body" #body="ngModel" required placeholder="Conteúdo da notícia"></textarea>
+          <div class="erro" *ngIf="formFoiSubmetido && body.invalid">
+            Campo obrigatório.
+          </div>
+
+          <!-- IMAGEM -->
+          <label for="imagem">Imagem</label>
+          <input id="imagem" [(ngModel)]="novaNoticia.image" name="image" #image="ngModel" required placeholder="URL da imagem" />
+          <div class="erro" *ngIf="formFoiSubmetido && image.invalid">
+            Campo obrigatório.
+          </div>
+
+          <div class="botoes">
+            <button class="cancel" [routerLink]="['']">Cancelar</button>
+            <button type="submit" class="enviar">Publicar Notícia</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+</main>
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <nav class="footer-nav">
+    </nav>
   </div>
+</footer>
+  
   

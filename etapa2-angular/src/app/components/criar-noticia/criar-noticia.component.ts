@@ -6,6 +6,8 @@ import { PostService } from '../../services/post.service';
 import { PostCriacao } from '../../models/post';
 import { FormsModule } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-criar-noticia',
   standalone: true,
@@ -21,6 +23,8 @@ export class CriarNoticiaComponent implements OnInit {
     image: ''
   };
 
+  formFoiSubmetido = false; 
+
   constructor(
     private postService: PostService,
     private router: Router
@@ -29,8 +33,14 @@ export class CriarNoticiaComponent implements OnInit {
   ngOnInit(): void {}
 
   criarNoticia() {
+    this.formFoiSubmetido = true;
+
+    if (!this.novaNoticia.title || !this.novaNoticia.body || !this.novaNoticia.image) {
+      return; 
+    }
+
     this.postService.criarPost(this.novaNoticia).subscribe({
-      next: () => this.router.navigate(['/']),
+      next: (noticiaCriada) => this.router.navigate(['/detalhes', noticiaCriada.id]),
       error: (err) => console.error('Erro ao criar notícia:', err)
     });
   }

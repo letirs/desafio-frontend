@@ -22,20 +22,25 @@ export class DetalhesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private postService: PostService) {}
 
   ngOnInit(): void {
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.postService.getPostById(this.id).subscribe({
-      next: (data) => this.post = data,
-      error: () => console.error('Erro ao buscar o post')
+    this.route.paramMap.subscribe(params => {
+      this.id = Number(params.get('id'));
+      
+      this.postService.getPostById(this.id).subscribe({
+        next: (data) => {
+          this.post = data;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+        error: () => console.error('Erro ao buscar o post')
+      });
+  
+      this.postService.getPosts().subscribe({
+        next: (data) => {
+          const outrosPosts = data.filter(p => p.id !== this.id);
+          this.posts = outrosPosts.sort(() => 0.5 - Math.random()).slice(0, 3);
+        },
+        error: () => console.error('Erro ao buscar os demais posts')
+      });
     });
-
-    this.postService.getPosts().subscribe({
-      next: (data) => {
-        const outrosPosts = data.filter(p => p.id !== this.id);
-        // Embaralha os posts e pega os 3 primeiros
-        this.posts = outrosPosts.sort(() => 0.5 - Math.random()).slice(0, 3);
-      },
-      error: () => console.error('Erro ao buscar os demais posts')
-    });
-    
   }
+  
 }
