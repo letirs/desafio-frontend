@@ -1,39 +1,53 @@
+/* Variaveis */
+$cinza-claro: #666666b9;
+$cinza-escuro: #383737;
+$sombra: 0.2rem 0.2rem 1rem #0000001a;
+$azul: #0090f7;
+$azul-hover: #02548e;
+$borda: #3333337e; 
+$azul-claro: #8da8f9;
+$branco: #ffffff;
+$azul-hover-escuro: #4f5e8a;
+$vermelho-claro: #ffeaea;
+$vermelho-escuro: #c00;
+
+/* Geral */
 .container {
     margin: 2% 5%;
 }
 
+/* Navegação */
 .navegar a, span{
     text-decoration: none;
-    color: #646565;
+    color: $cinza-claro;
     font-size: small;
     font-weight: 500;
 }
 
 .navegar a:hover{
-    color: #02548e;
-    font-weight: 500;
-    text-decoration: underline;
+    color: $cinza-escuro;
 }
 
 .atual {
-    color: #524e4e;
+    color: $cinza-escuro;
 }
 
+/* Formulario */
 .formulario {
     border-radius: 5px;
-    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: $sombra;
     line-height: 2; 
     width: 100%;  
 }
 
 .barra {
-    background-color: #8da8f9;
+    background-color: $azul-claro;
     border-radius: 5px 5px 0 0;
 }
 
 .barra h2 {
     margin-left: 2%;
-    color: #fff; 
+    color: $branco;
 }
 
 .campos {
@@ -56,7 +70,7 @@ label, input, textarea {
 
 input, textarea {
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid $borda;
     border-radius: 5px;
     font-size: 1rem;
     box-sizing: border-box;
@@ -77,6 +91,7 @@ textarea {
     resize: vertical;
 }
 
+/* botoes */
 .botoes {
     display: flex;
     gap: 10px;
@@ -92,37 +107,36 @@ textarea {
 }
 
 .cancel {
-    color: rgb(52, 50, 50);
+    color: $cinza-escuro;
 }
 
 .enviar {
-    background-color: #8da8f9;
-    color: white;
+    background-color: $azul-claro;
+    color: $branco;
 }
 
 .cancel:hover{
-    background-color: rgba(142, 139, 139, 0.679) ;
+    background-color: $cinza-claro;
     transition: background-color 0.3s;
 }
 
 .enviar:hover {
-    background-color: #4f5e8a;
-    color: #fff;
+    background-color: $azul-hover-escuro;
+    color: $branco;
     transition: background-color 0.3s;
 }
 
-
+/* Header */
 .barraNav {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    background-color: #333; 
+    background-color: $cinza-escuro;
     padding: 1rem 2rem; 
-    color: white; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    color: $branco;
+    box-shadow: $sombra; 
 }
   
-
 .barraNav h1 {
     margin: 0; 
     font-size: 1.8rem; 
@@ -130,24 +144,19 @@ textarea {
     letter-spacing: 1px; 
 }
 
-.footer {
-    background-color: #333; 
-    color: white;
-    padding: 2rem 0; 
-}
-
+/* Mensagem de Erro - campo obrogatorio */
 .erro {
-    background-color: #ffeaea;
-    color: #c00;
+    background-color: $vermelho-claro;
+    color: $vermelho-escuro;
     padding: 5px 10px;
     border-radius: 4px;
     margin: 4px 0 10px;
     font-size: 0.85rem;
   }
-  
-  
 
+/* Telas pequenas */
 @media (max-width: 900px) {
+    /* Header */
     .barraNav {
         padding: 1rem;
     }
@@ -155,8 +164,4 @@ textarea {
     .barraNav h1 {
         font-size: 1.5rem; 
     }
-
-    .footer {
-        max-width: 100%;
-    } 
 }

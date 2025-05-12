@@ -1,10 +1,19 @@
+/* Variaveis */
+$cinza-claro: #666666b9;
+$sombra: 0.2rem 0.2rem 1rem #0000001a;
+$azul: #0090f7;
+$azul-hover: #02548e;
+$borda: #3333337e; 
+$azul-claro: #8da8f9;
+$branco: #ffffff;
 
+/* Geral */
 .container {
     margin: 0;
 }
 
-/* seção resultado*/
 
+/* Resultado*/
 .resultado {
     text-align: center;
     margin-bottom: 30px;
@@ -17,9 +26,10 @@
 
 .resultado p {
     font-size: 1rem;
-    color: #666666b9;
+    color: $cinza-claro;
 }
 
+/* Conteudo Geral */
 .conteudo {
     justify-content: center;
     display: flex;
@@ -39,9 +49,9 @@
 }
   
 .card {
-    background-color: white;
+    background-color: $branco;
     border-radius: 1%;
-    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: $sombra;
     overflow: hidden;
     max-width: 48%;
     font-size: 1rem;
@@ -52,13 +62,12 @@
     min-height: 15rem;
 }
   
-.card img {
+.imagem img {
     width: 100%;         
     height: 15rem;       
     object-fit: cover;     
     min-width: 100%;
 }
-
   
 .texto {
     padding: 15px;
@@ -71,20 +80,19 @@
   
 .texto p {
     font-size: 14px;
-    color: #44444494;
+    color: $cinza-claro;
     margin-bottom: 10px;
 }
   
 .texto a {
-    color: #0090f7;
+    color: $azul;
     text-decoration: none;
     font-size: small;
     font-weight: 600;
 }
 
 .texto a:hover{
-    color: #02548e;
-    text-decoration: underline;
+    color: $azul-hover;
 }
 
 /* Categorias e barra de pesquisa*/
@@ -115,8 +123,8 @@
 .sidebar li {
     width: 100%;
     padding: 5px 0;
-    color: #3333337e;
-    border-bottom: 1px solid #3333337e; 
+    color: $cinza-claro;
+    border-bottom: 1px solid $borda; 
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
     font-size:smaller;
@@ -138,8 +146,8 @@
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
-    border: 1.5px solid #ccc;
-    border-radius: 6%;
+    border: 1.5px solid $cinza-claro;
+    border-radius: 6px;
     align-items: center;
 }
 
@@ -159,13 +167,13 @@
     height: fit-content;
 }
 
-/* botao flutuante*/
+/* Botao flutuante - criar noticia */
 .botao-flutuante {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background-color: #8da8f9;
-    color: rgb(255, 255, 255);
+    background-color: $azul-claro;
+    color: $branco;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
@@ -177,34 +185,28 @@
     width: 5%;
     height: 10%;
     transition: width 0.5s ease;
-  }
+}
   
-  /* Estado inicial: só o "+" */
-  .texto-botao::before {
+.texto-botao::before {
     content: "+";
     font-size: 1.5rem;
     transition: content 0.5s ease;
-  }
+}
   
-  /* Ao passar o mouse: troca para "Adicionar notícia" */
-  .botao-flutuante:hover {
-    width: 12%;
-  }
+.botao-flutuante:hover {
+    width: 15%;
+}
   
-  .botao-flutuante:hover .texto-botao::before {
+.botao-flutuante:hover .texto-botao::before {
     content: "Adicionar notícia";
     font-size: 1rem;
-  }
+}
   
-
-/* formatação para telas pequenas*/
+/* Telas pequenas */
 @media (max-width: 900px) {
+    /* Geral */
     body {
         margin: 5%;
-    }
-
-    html {
-        font-size: 80%;
     }
     
     .conteudo {
@@ -214,7 +216,8 @@
         align-items: center;
         width: 100%;
     }
-  
+    
+    /* Cards */
     .cards {
         width: 100%;
         margin-bottom: 2rem;
@@ -225,12 +228,11 @@
         width: 100%;
         min-width: 80%;
     }
-  
+    
+    /* Categorias e barra de pesquisa*/
     .sidebar {
         width: 90%;
-        max-width: 600px;
-        margin-top: 20px;
-        padding: 20px;
+        padding: 2rem;
     }
   
     .sidebar h5 {
@@ -241,9 +243,10 @@
         width: 100%;
     }
 
+    /* Botao flutuante - criar noticia */
     .botao-flutuante {
         position: fixed;
-        width: 30%;
+        width: 40%;
         height: 5%;
         bottom: 4rem;
         right: 3rem;
@@ -262,5 +265,5 @@
         content: "Adicionar notícia";
         font-size: 1rem; 
     }
-  }
+}
   
